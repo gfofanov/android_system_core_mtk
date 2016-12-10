@@ -192,7 +192,7 @@ static const struct fs_path_config android_files[] = {
                                               "system/bin/run-as" },
 
     /* Support FIFO scheduling mode in SurfaceFlinger. */
-    { 00755, AID_SYSTEM,    AID_GRAPHICS,  CAP_MASK_LONG(CAP_SYS_NICE),
+  //  { 00755, AID_SYSTEM,    AID_GRAPHICS,  CAP_MASK_LONG(CAP_SYS_NICE),
                                               "system/bin/surfaceflinger" },
 
     /* Support hostapd administering a network interface. */
