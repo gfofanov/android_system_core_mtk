@@ -1,5 +1,6 @@
 # set up the global environment
 on init
+    export PATH /data/lxc/lxc/bin:/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
     export ANDROID_ASSETS /system/app
@@ -7,6 +8,7 @@ on init
     export ANDROID_STORAGE /storage
     export EXTERNAL_STORAGE /sdcard
     export ASEC_MOUNTPOINT /mnt/asec
+    export LD_LIBRARY_PATH /data/lxc/lxc/lib
     export BOOTCLASSPATH %BOOTCLASSPATH%
     export SYSTEMSERVERCLASSPATH %SYSTEMSERVERCLASSPATH%
     export LD_PRELOAD libsigchain.so%TARGET_LDPRELOAD%
