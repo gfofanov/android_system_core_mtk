@@ -7,6 +7,8 @@
     void _ZN7android8String165setToEPKtj(unsigned short const* str, unsigned int len){
         _ZN7android8String165setToEPKDsj((char16_t const*)str, len);
     }
+    void _ZN9JpgEncHal13setSrcBufSizeEjjjj(){
+    }
 
     void _ZN7android8String16C1EPKDsj(char16_t const*, unsigned int);
 
