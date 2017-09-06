@@ -83,7 +83,7 @@ static std::string ComputeContextFromExecutable(std::string& service_name,
         if (selinux_status_getenforce() > 0) {
             return "";
         }*/
-    }
+   // }
     if (rc < 0) {
         LOG(ERROR) << "could not get context while starting '" << service_name << "'";
         return "";
