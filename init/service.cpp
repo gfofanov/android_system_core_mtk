@@ -373,10 +373,9 @@ bool Service::Start() {
         }
         if (rc == 0 && scon == mycon) {
             ERROR("Service %s does not have a SELinux domain defined.\n", name_.c_str());
-			// zormax
-            //free(mycon);
-            //free(fcon);
-            //return false;
+            free(mycon);
+            free(fcon);
+            return false;
         }
         free(mycon);
         free(fcon);
@@ -781,6 +780,8 @@ bool ServiceManager::ReapOneProcess() {
     } else if (pid == -1) {
         ERROR("waitpid failed: %s\n", strerror(errno));
         return false;
+    } else if (property_child_reap(pid)) {
+        return true;
     }
 
     Service* svc = FindServiceByPid(pid);
