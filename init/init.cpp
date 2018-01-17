@@ -439,7 +439,7 @@ static void selinux_init_all_handles(void)
     selinux_android_set_sehandle(sehandle);
     sehandle_prop = selinux_android_prop_context_handle();
 }
-/**
+
 enum selinux_enforcing_status { SELINUX_PERMISSIVE, SELINUX_ENFORCING };
 
 static selinux_enforcing_status selinux_status_from_cmdline() {
@@ -453,12 +453,11 @@ static selinux_enforcing_status selinux_status_from_cmdline() {
 
     return status;
 }
-**/
 
 static bool selinux_is_enforcing(void)
 {
     if (ALLOW_PERMISSIVE_SELINUX) {
-        return false; //selinux_status_from_cmdline() == SELINUX_ENFORCING;
+        return selinux_status_from_cmdline() == SELINUX_ENFORCING;
     }
     return true;
 }
